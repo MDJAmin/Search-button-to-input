@@ -24,6 +24,9 @@ body{
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
     transition: 1s all;
 }
+.container .search:hover{
+    cursor: pointer;
+}
 .container .search::before{
     content: " ";
     position: absolute;
@@ -73,4 +76,35 @@ body{
     z-index: 5;
     letter-spacing: 0.1em;
     transition: 1s all;
+}
+.container input:hover{
+    cursor: pointer;
+}
+.container input:focus{
+    width: 300px;
+    opacity: 1;
+    cursor: text;
+}
+.container input:focus ~ .search{
+    right: -250px;
+    background-color: #151515;
+    z-index: 6;
+}
+.container input:focus ~ .search::before{
+    top: 0;
+    left: 0;
+    width: 25px;
+}
+.container input:focus ~ .search::after{
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    border: none;
+    background-color: #fff;
+    border-radius: 0;
+    transform: rotate(-45deg);
+}
+.container input::placeholder{
+    color: #fff;
 }
